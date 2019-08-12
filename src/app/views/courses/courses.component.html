@@ -1,0 +1,65 @@
+<div>
+    <h3>Lista de Cursos</h3>
+    <div>
+        <button mat-flat-button color="accent" class="btn btn-success" routerLink="/course-new/" selected>Novo</button>
+    </div>
+</div>
+<div class="example-container">
+    <mat-form-field>
+        Filtro: <input matInput (keyup)="applyFilter($event.target.value)">
+    </mat-form-field>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Nome</th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="period">
+            <th mat-header-cell *matHeaderCellDef> Período</th>
+            <td mat-cell *matCellDef="let element"> {{element.period}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="city">
+            <th mat-header-cell *matHeaderCellDef> PHD</th>
+            <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="teacher">
+            <th mat-header-cell *matHeaderCellDef> Professores</th>
+            <td mat-cell *matCellDef="let element">
+                <mat-list>
+                    <mat-list-item *ngFor="let item of element.teacher">{{item.name}}</mat-list-item>
+                </mat-list>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let element">
+                <button mat-flat-button color="accent" class="btn btn-info" routerLink="/course-details/{{element.id}}" selected>Detalhe</button>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actionUpdate">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let element">
+                <button mat-flat-button color="accent"  class="btn btn-light" routerLink="/course-update/{{element.id}}" selected>Editar</button>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>
+<mat-paginator
+        [length]="length"
+        [pageSize]="pageSize"
+        [pageSizeOptions]="pageSizeOptions"
+></mat-paginator>
