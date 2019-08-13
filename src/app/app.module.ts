@@ -24,6 +24,8 @@ import { RegisterComponent } from './views/register/register.component';
 
 import { TeachersComponent } from './views/teachers/teachers/teachers.component';
 import { TeacherNewComponent } from './views/teachers/teachers-new/teachers-new.component';
+import { TeacherUpdateComponent } from "./views/teachers/teachers-update/teachers-update.component";
+import { TeacherDetailsComponent} from "./views/teachers/teachers-details/teachers-details.component";
 import { CoursesComponent } from './views/courses/courses/courses.component';
 import { CoursesNewComponent } from './views/courses/courses-new/courses-new.component';
 import { StudentsComponent } from './views/students/students/students.component';
@@ -103,6 +105,8 @@ import { HttpClientModule } from '@angular/common/http';
     RegisterComponent,
     TeachersComponent,
     TeacherNewComponent,
+    TeacherUpdateComponent,
+    TeacherDetailsComponent,
     CoursesComponent,
     CoursesNewComponent,
     StudentsComponent,

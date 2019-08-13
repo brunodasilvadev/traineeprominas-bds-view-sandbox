@@ -1,0 +1,21 @@
+<div class="card-header">
+    <h3>Detalhes do professor</h3>
+</div>
+<div class="card-header">
+    <div class="example-loading-shade"
+         *ngIf="isLoadingResults">
+        <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+    </div>
+    <div class="button-row">
+        <button class="btn btn-sm btn-link" [routerLink]="['/teachers']">Voltar</button>
+    </div>
+    <mat-card class="example-card">
+        <mat-card-header>
+            <mat-card-title><h4>Nome:</h4> {{teachers.name}} {{teachers.lastName}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-actions>
+            <button class="btn btn-sm btn-warning" [routerLink]="['/teacher-update', teachers.id]"><i class="fa fa-edit"></i> Editar</button>
+            <button class="btn btn-sm btn-danger" (click)="deleteTeacher(teachers.id)"><i class="fa fa-ban"></i>Excluir</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

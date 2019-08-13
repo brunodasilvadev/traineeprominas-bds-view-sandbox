@@ -1,10 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+<div class="card-header">
+    <h3>Atualize os dados do professor</h3>
+</div>
+<div class="card-body">
+    <form class="example-container" [formGroup]="teacherForm" (ngSubmit)="updateTeacher(teacherForm.value)">
+        <div class="form-group row">
+            <label class="col-md-1 col-form-label">Nome</label>
+            <div class="col-md-11">
+                <input name="name" class="form-control" placeholder="Escreva seu nome.." formControlName="name">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-1 col-form-label">Sobrenome</label>
+            <div class="col-md-11">
+                <input name="lastName" class="form-control" placeholder="Escreva seu sobrenome.."
+                       formControlName="lastName">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-9 col-form-label">
+                <input class="form-check-input" type="checkbox" formControlName="phd" id="checkboxPHD">
+                <label class="form-check-label" for="checkboxPHD">
+                    Eu tenho PHD
+                </label>
+            </div>
+        </div>
+        <div>
+            <button type="submit" [disabled]="!teacherForm.valid" class="btn btn-sm btn-success"><i class="fa fa-save"></i> Salvar</button>
+            <button class="btn btn-sm btn-info" routerLink="/teachers/" selected><i class="fa fa-backward"></i> Voltar</button>
+        </div>
+    </form>
+</div>
