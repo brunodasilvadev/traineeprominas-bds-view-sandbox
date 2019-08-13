@@ -2,8 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 
-import { ApiService } from '../../api.service';
-import { Students } from '../../models/students';
+import { ApiService } from '../../../api.service';
+import { Students } from '../../../models/students';
 
 @Component({
     selector: 'app-students',
@@ -17,7 +17,6 @@ export class StudentsComponent implements OnInit {
     isLoadingResults = true;
     length = 10;
     pageSize = 8;
-    pageSizeOptions = [1, 2, 5, 10];
 
     constructor(private api: ApiService) { }
 

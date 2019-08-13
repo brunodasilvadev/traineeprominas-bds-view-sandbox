@@ -18,7 +18,6 @@ export class TeachersComponent implements OnInit {
     isLoadingResults = true;
     length = 10;
     pageSize = 8;
-    pageSizeOptions = [1, 2, 5, 10];
 
     constructor(private api: ApiService) {
     }

@@ -26,7 +26,8 @@ import { TeachersComponent } from './views/teachers/teachers/teachers.component'
 import { TeacherNewComponent } from './views/teachers/teachers-new/teachers-new.component';
 import { CoursesComponent } from './views/courses/courses/courses.component';
 import { CoursesNewComponent } from './views/courses/courses-new/courses-new.component';
-import { StudentsComponent } from './views/students/students.component';
+import { StudentsComponent } from './views/students/students/students.component';
+import { StudentNewComponent } from "./views/students/students-new/students-new.component";
 
 const APP_CONTAINERS = [
   DefaultLayoutComponent
@@ -104,7 +105,8 @@ import { HttpClientModule } from '@angular/common/http';
     TeacherNewComponent,
     CoursesComponent,
     CoursesNewComponent,
-    StudentsComponent
+    StudentsComponent,
+    StudentNewComponent
   ],
   providers: [{
     provide: LocationStrategy,

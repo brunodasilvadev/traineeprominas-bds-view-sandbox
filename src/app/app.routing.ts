@@ -12,7 +12,8 @@ import {TeachersComponent} from './views/teachers/teachers/teachers.component';
 import {TeacherNewComponent} from './views/teachers/teachers-new/teachers-new.component';
 import {CoursesComponent} from './views/courses/courses/courses.component';
 import {CoursesNewComponent} from './views/courses/courses-new/courses-new.component';
-import {StudentsComponent} from './views/students/students.component';
+import {StudentsComponent} from './views/students/students/students.component';
+import {StudentNewComponent} from "./views/students/students-new/students-new.component";
 
 export const routes: Routes = [
     {
@@ -54,7 +55,7 @@ export const routes: Routes = [
                 path: 'teachers',
                 component: TeachersComponent,
                 data: {
-                    title: 'Lista de Professores'
+                    title: 'Professores'
                 }
             },
             {
@@ -84,8 +85,14 @@ export const routes: Routes = [
                 data: {
                     title: 'Estudantes'
                 }
+            },
+            {
+                path: 'students-new',
+                component: StudentNewComponent,
+                data: {
+                    title: 'Novo Estudante'
+                }
             }
-
         ]
     },
     {path: '**', component: P404Component}

@@ -1,7 +1,6 @@
-<div>
-    <h3>Lista de Estudantes</h3>
+<div class="card-header">
     <div>
-        <button mat-flat-button color="accent" class="btn btn-success" routerLink="/student-new/" selected>Novo</button>
+        <button mat-flat-button color="accent" class="btn btn-success" routerLink="/students-new/" selected>Novo</button>
     </div>
 </div>
 <div class="example-container">
@@ -62,5 +61,4 @@
 <mat-paginator
         [length]="length"
         [pageSize]="pageSize"
-        [pageSizeOptions]="pageSizeOptions"
 ></mat-paginator>

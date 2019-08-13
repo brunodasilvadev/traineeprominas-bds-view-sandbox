@@ -1,7 +1,6 @@
 <div class="card-header">
     <h3>Adicionar Novo Curso</h3>
-</div>
-<div class="card-body">
+
     <form class="example-container" [formGroup]="courseForm" (ngSubmit)="addCourse(courseForm.value)">
         <div class="form-group row">
             <label class="col-md-1 col-form-label">Nome:</label>
@@ -23,19 +22,18 @@
                        formControlName="city">
             </div>
         </div>
-        <!--<div class="form-group row">
-            <label class="col-md-1 col-form-label">Professores:</label>
+         <div class="form-group row">
+            <label class="col-md-1 col-form-label" for="select1">Professores:</label>
             <div class="col-md-11">
-                <mat-form-field>
-                    <mat-select placeholder="Selecione" formControlName="teacher" id="teacher" multiple>
-                        <mat-option *ngFor="let teacher of teachers" value="{{teacher.id}}">{{ teacher.name }}</mat-option>
-                    </mat-select>
-                </mat-form-field>
+                <select id="select1" name="teacher"  class="form-control" formControlName="teacher"  multiple>
+                    <option *ngFor="let teacher of teachers" value="{{teacher.id}}">{{ teacher.name }} {{ teacher.lastName }}</option>
+                </select>
             </div>
-        </div>-->
+        </div>
         <div class="form-group row">
-            <button type="submit" [disabled]="!courseForm.valid" mat-button color="primary">Adicionar</button>
-            <button mat-flat-button color="accent" routerLink="/courses/" selected>Voltar</button>
+            <button type="submit" [disabled]="!courseForm.valid" class="btn btn-sm btn-success"><i class="fa fa-dot-circle-o"></i>Adicionar</button>
+            <button class="btn btn-sm btn-danger" routerLink="/courses/" selected><i class="fa fa-ban"></i> Voltar</button>
         </div>
     </form>
+
 </div>
