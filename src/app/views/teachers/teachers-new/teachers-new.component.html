@@ -1,0 +1,33 @@
+<div class="card-header">
+    <h3>Adicionar Novo Professor</h3>
+</div>
+<div class="card-body">
+    <form class="example-container" [formGroup]="teacherForm" (ngSubmit)="addTeacher(teacherForm.value)">
+        <div class="form-group row">
+            <label class="col-md-1 col-form-label">Nome</label>
+            <div class="col-md-11">
+                <input name="name" class="form-control" placeholder="Escreva seu nome.." formControlName="name">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-1 col-form-label">Sobrenome</label>
+            <div class="col-md-11">
+                <input name="lastName" class="form-control" placeholder="Escreva seu sobrenome.."
+                       formControlName="lastName">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-9 col-form-label">
+                <!--<mat-checkbox formControlName="phd">Eu tenho PHD</mat-checkbox>-->
+                <input class="form-check-input" type="checkbox" formControlName="phd" id="checkboxPHD">
+                <label class="form-check-label" for="checkboxPHD">
+                    Eu tenho PHD
+                </label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <button type="submit" [disabled]="!teacherForm.valid" class="btn btn-sm btn-success"><i class="fa fa-dot-circle-o"></i>Adicionar</button>
+            <button class="btn btn-sm btn-danger" routerLink="/teachers/" selected><i class="fa fa-ban"></i> Voltar</button>
+        </div>
+    </form>
+</div>

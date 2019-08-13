@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -21,8 +22,10 @@ import { P500Component } from './views/error/500.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
 
-import { TeachersComponent } from './views/teachers/teachers.component';
-import { CoursesComponent } from './views/courses/courses.component';
+import { TeachersComponent } from './views/teachers/teachers/teachers.component';
+import { TeacherNewComponent } from './views/teachers/teachers-new/teachers-new.component';
+import { CoursesComponent } from './views/courses/courses/courses.component';
+import { CoursesNewComponent } from './views/courses/courses-new/courses-new.component';
 import { StudentsComponent } from './views/students/students.component';
 
 const APP_CONTAINERS = [
@@ -54,7 +57,8 @@ import {
   MatSelectModule,
   MatSidenavModule,
   MatTableModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatCheckboxModule
 } from '@angular/material';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { HttpClientModule } from '@angular/common/http';
@@ -63,6 +67,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     AppAsideModule,
     AppBreadcrumbModule.forRoot(),
@@ -76,6 +82,7 @@ import { HttpClientModule } from '@angular/common/http';
     ChartsModule,
     MatButtonModule,
     MatCardModule,
+    MatCheckboxModule,
     MatIconModule,
     MatInputModule,
     MatListModule,
@@ -94,7 +101,9 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     RegisterComponent,
     TeachersComponent,
+    TeacherNewComponent,
     CoursesComponent,
+    CoursesNewComponent,
     StudentsComponent
   ],
   providers: [{

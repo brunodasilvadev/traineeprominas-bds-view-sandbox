@@ -2,8 +2,8 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 
-import { ApiService } from '../../api.service';
-import { Courses } from '../../models/courses';
+import { ApiService } from '../../../api.service';
+import { Courses } from '../../../models/courses';
 
 @Component({
     selector: 'app-courses',

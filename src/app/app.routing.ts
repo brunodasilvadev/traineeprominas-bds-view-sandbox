@@ -8,8 +8,10 @@ import {P404Component} from './views/error/404.component';
 import {P500Component} from './views/error/500.component';
 import {LoginComponent} from './views/login/login.component';
 import {RegisterComponent} from './views/register/register.component';
-import {TeachersComponent} from './views/teachers/teachers.component';
-import {CoursesComponent} from './views/courses/courses.component';
+import {TeachersComponent} from './views/teachers/teachers/teachers.component';
+import {TeacherNewComponent} from './views/teachers/teachers-new/teachers-new.component';
+import {CoursesComponent} from './views/courses/courses/courses.component';
+import {CoursesNewComponent} from './views/courses/courses-new/courses-new.component';
 import {StudentsComponent} from './views/students/students.component';
 
 export const routes: Routes = [
@@ -52,7 +54,14 @@ export const routes: Routes = [
                 path: 'teachers',
                 component: TeachersComponent,
                 data: {
-                    title: 'Professores'
+                    title: 'Lista de Professores'
+                }
+            },
+            {
+                path: 'teacher-new',
+                component: TeacherNewComponent,
+                data: {
+                    title: 'Novo Professor'
                 }
             },
             {
@@ -60,6 +69,13 @@ export const routes: Routes = [
                 component: CoursesComponent,
                 data: {
                     title: 'Cursos'
+                }
+            },
+            {
+                path: 'courses-new',
+                component: CoursesNewComponent,
+                data: {
+                    title: 'Novo Curso'
                 }
             },
             {

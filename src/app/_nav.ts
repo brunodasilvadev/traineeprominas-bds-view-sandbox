@@ -35,17 +35,17 @@ export const navItems: NavData[] = [
     name: 'Cadastro'
   },
   {
-    name: 'Teachers',
+    name: 'Professores',
     url: '/teachers',
     icon: 'icon-people'
   },
   {
-    name: 'Courses',
+    name: 'Cursos',
     url: '/courses',
     icon: 'icon-book-open'
   },
   {
-    name: 'Students',
+    name: 'Estudantes',
     url: '/students',
     icon: 'icon-pencil'
   }

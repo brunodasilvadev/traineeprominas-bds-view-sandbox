@@ -1,0 +1,41 @@
+<div class="card-header">
+    <h3>Adicionar Novo Curso</h3>
+</div>
+<div class="card-body">
+    <form class="example-container" [formGroup]="courseForm" (ngSubmit)="addCourse(courseForm.value)">
+        <div class="form-group row">
+            <label class="col-md-1 col-form-label">Nome:</label>
+            <div class="col-md-11">
+                <input name="name" class="form-control" placeholder="Escreva seu nome.." formControlName="name">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-1 col-form-label">Período:</label>
+            <div class="col-md-11">
+                <input name="period" class="form-control" placeholder="Escreva quantos períodos tem este curso.."
+                       formControlName="period">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-1 col-form-label">Cidade:</label>
+            <div class="col-md-11">
+                <input name="city" class="form-control" placeholder="Escreva a cidade que está este curso.."
+                       formControlName="city">
+            </div>
+        </div>
+        <!--<div class="form-group row">
+            <label class="col-md-1 col-form-label">Professores:</label>
+            <div class="col-md-11">
+                <mat-form-field>
+                    <mat-select placeholder="Selecione" formControlName="teacher" id="teacher" multiple>
+                        <mat-option *ngFor="let teacher of teachers" value="{{teacher.id}}">{{ teacher.name }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>-->
+        <div class="form-group row">
+            <button type="submit" [disabled]="!courseForm.valid" mat-button color="primary">Adicionar</button>
+            <button mat-flat-button color="accent" routerLink="/courses/" selected>Voltar</button>
+        </div>
+    </form>
+</div>
