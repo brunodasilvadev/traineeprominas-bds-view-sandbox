@@ -35,6 +35,11 @@ export const navItems: NavData[] = [
     name: 'Cadastro'
   },
   {
+    name: 'Usuários',
+    url: '/users',
+    icon: 'icon-people'
+  },
+  {
     name: 'Professores',
     url: '/teachers',
     icon: 'icon-people'

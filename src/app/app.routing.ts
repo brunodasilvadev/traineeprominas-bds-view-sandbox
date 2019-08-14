@@ -20,6 +20,10 @@ import {StudentsComponent} from './views/students/students/students.component';
 import {StudentNewComponent} from "./views/students/students-new/students-new.component";
 import {StudentsUpdateComponent} from "./views/students/students-update/students-update.component";
 import {StudentsDetailsComponent} from "./views/students/students-details/students-details.component";
+import {UsersComponent} from "./views/users/users/users.component";
+import {UsersNewComponent} from "./views/users/users-new/users-new.component";
+import {UsersUpdateComponent} from "./views/users/users-update/users-update.component";
+import {UsersDetailsComponent} from "./views/users/users-details/users-details.component";
 
 export const routes: Routes = [
     {
@@ -57,6 +61,34 @@ export const routes: Routes = [
             title: 'Home'
         },
         children: [
+            {
+                path: 'users',
+                component: UsersComponent,
+                data: {
+                    title: 'Usuários'
+                }
+            },
+            {
+                path: 'users-new',
+                component: UsersNewComponent,
+                data: {
+                    title: 'Novos Usuários'
+                }
+            },
+            {
+                path: 'users-update/:id',
+                component: UsersUpdateComponent,
+                data: {
+                    title: 'Atualiza Usuários'
+                }
+            },
+            {
+                path: 'users-details/:id',
+                component: UsersDetailsComponent,
+                data: {
+                    title: 'Detalhes do Usuários'
+                }
+            },
             {
                 path: 'teachers',
                 component: TeachersComponent,
