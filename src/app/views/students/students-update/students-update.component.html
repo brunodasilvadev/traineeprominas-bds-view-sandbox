@@ -1,10 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+<div class="card-header">
+    <h3>Atualize os dados do estudante</h3>
+</div>
+<div class="card-body">
+    <form class="example-container" [formGroup]="studentForm" (ngSubmit)="updateStudent(studentForm.value)">
+        <div class="form-group row">
+            <label class="col-md-1 col-form-label">Nome:</label>
+            <div class="col-md-11">
+                <input name="name" class="form-control" placeholder="Escreva o nome do estudante.."
+                       formControlName="name">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-1 col-form-label">Sobrenome:</label>
+            <div class="col-md-11">
+                <input name="lastName" class="form-control" placeholder="Escreva o sobrenome do estudante.."
+                       formControlName="lastName">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-1 col-form-label">Idade:</label>
+            <div class="col-md-11">
+                <input name="age" class="form-control" placeholder="Escreva a idade.."
+                       formControlName="age">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-1 col-form-label" for="select1">Cursos:</label>
+            <div class="col-md-11">
+                <select id="select1" name="course" class="form-control" formControlName="course">
+                    <option *ngFor="let course of courses" value="{{course.id}}">{{ course.name }}</option>
+                </select>
+            </div>
+        </div>
+        <div>
+            <button type="submit" [disabled]="!studentForm.valid" class="btn btn-sm btn-success"><i class="fa fa-save"></i> Salvar</button>
+            <button class="btn btn-sm btn-info"  routerLink="/students/" selected><i class="fa fa-backward"></i> Voltar</button>
+        </div>
+    </form>
+</div>

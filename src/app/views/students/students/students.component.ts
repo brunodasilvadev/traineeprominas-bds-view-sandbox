@@ -12,7 +12,7 @@ import { Students } from '../../../models/students';
 })
 export class StudentsComponent implements OnInit {
 
-    displayedColumns: string[] = ['name', 'lastName', 'age', 'course', 'action', 'actionUpdate'];
+    displayedColumns: string[] = ['name', 'lastName', 'age', 'course', 'actionUpdate', 'action'];
     dataSource: MatTableDataSource<Students>;
     isLoadingResults = true;
     length = 10;

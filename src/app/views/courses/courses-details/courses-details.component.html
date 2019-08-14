@@ -1,10 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+<div class="card-header">
+    <h3>Detalhes do curso</h3>
+</div>
+<div class="card-header">
+    <div class="example-loading-shade"
+         *ngIf="isLoadingResults">
+        <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+    </div>
+    <div class="button-row">
+        <button class="btn btn-sm btn-link" [routerLink]="['/courses']">Voltar</button>
+    </div>
+    <mat-card class="example-card">
+        <mat-card-header>
+            <mat-card-title><h3>{{courses.name}}</h3></mat-card-title>
+        </mat-card-header>
+        <mat-card-subtitle>Cidade: {{courses.city}}</mat-card-subtitle>
+        <mat-card-subtitle>Períodos: {{courses.period}}</mat-card-subtitle>
+        <mat-card-content>
+            <mat-card-title><h6> Professores</h6></mat-card-title>
+            <ul>
+                <li *ngFor="let item of courses.teacher">
+                    {{item.name}}
+                </li>
+            </ul>
+        </mat-card-content>
+        <mat-card-actions>
+            <button class="btn btn-sm btn-warning" [routerLink]="['/course-update', courses.id]"><i class="fa fa-edit"></i>  Editar </button>
+            <button class="btn btn-sm btn-danger" (click)="deleteCourse(courses.id)"><i class="fa fa-ban"></i> Excluir </button>
+        </mat-card-actions>
+    </mat-card>
+</div>

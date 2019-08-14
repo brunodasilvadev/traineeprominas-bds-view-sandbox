@@ -14,8 +14,12 @@ import {TeacherUpdateComponent} from './views/teachers/teachers-update/teachers-
 import {TeacherDetailsComponent} from "./views/teachers/teachers-details/teachers-details.component";
 import {CoursesComponent} from './views/courses/courses/courses.component';
 import {CoursesNewComponent} from './views/courses/courses-new/courses-new.component';
+import {CoursesUpdateComponent} from "./views/courses/courses-update/courses-update.component";
+import {CoursesDetailsComponent} from "./views/courses/courses-details/courses-details.component";
 import {StudentsComponent} from './views/students/students/students.component';
 import {StudentNewComponent} from "./views/students/students-new/students-new.component";
+import {StudentsUpdateComponent} from "./views/students/students-update/students-update.component";
+import {StudentsDetailsComponent} from "./views/students/students-details/students-details.component";
 
 export const routes: Routes = [
     {
@@ -89,10 +93,24 @@ export const routes: Routes = [
                 }
             },
             {
-                path: 'courses-new',
+                path: 'course-new',
                 component: CoursesNewComponent,
                 data: {
                     title: 'Novo Curso'
+                }
+            },
+            {
+                path: 'course-update/:id',
+                component: CoursesUpdateComponent,
+                data: {
+                    title: 'Atualiza Curso'
+                }
+            },
+            {
+                path: 'course-details/:id',
+                component: CoursesDetailsComponent,
+                data: {
+                    title: 'Detalhes do Curso'
                 }
             },
             {
@@ -107,6 +125,20 @@ export const routes: Routes = [
                 component: StudentNewComponent,
                 data: {
                     title: 'Novo Estudante'
+                }
+            },
+            {
+                path: 'students-update/:id',
+                component: StudentsUpdateComponent,
+                data: {
+                    title: 'Atualiza Estudante'
+                }
+            },
+            {
+                path: 'students-details/:id',
+                component: StudentsDetailsComponent,
+                data: {
+                    title: 'Detalhes do Estudante'
                 }
             }
         ]
