@@ -31,13 +31,18 @@ export interface NavData {
 
 export const navItems: NavData[] = [
   {
+    name: 'Gráficos',
+    url: '/charts',
+    icon: 'icon-pie-chart'
+  },
+  {
     title: true,
     name: 'Cadastro'
   },
   {
     name: 'Usuários',
     url: '/users',
-    icon: 'icon-people'
+    icon: 'icon-user'
   },
   {
     name: 'Professores',

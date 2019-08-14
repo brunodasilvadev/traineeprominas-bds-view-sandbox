@@ -62,6 +62,10 @@ export const routes: Routes = [
         },
         children: [
             {
+                path: 'charts',
+                loadChildren: () => import('./views/chartjs/chartjs.module').then(m => m.ChartJSModule)
+            },
+            {
                 path: 'users',
                 component: UsersComponent,
                 data: {

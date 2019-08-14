@@ -1,97 +1,83 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ApiService} from '../../api.service';
 
 @Component({
-  templateUrl: 'chartjs.component.html'
+    templateUrl: 'chartjs.component.html'
 })
-export class ChartJSComponent {
+export class ChartJSComponent implements OnInit {
 
-  // lineChart
-  public lineChartData: Array<any> = [
-    {data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A'},
-    {data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B'},
-    {data: [18, 48, 77, 9, 100, 27, 40], label: 'Series C'}
-  ];
-  public lineChartLabels: Array<any> = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-  public lineChartOptions: any = {
-    animation: false,
-    responsive: true
-  };
-  public lineChartColours: Array<any> = [
-    { // grey
-      backgroundColor: 'rgba(148,159,177,0.2)',
-      borderColor: 'rgba(148,159,177,1)',
-      pointBackgroundColor: 'rgba(148,159,177,1)',
-      pointBorderColor: '#fff',
-      pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgba(148,159,177,0.8)'
-    },
-    { // dark grey
-      backgroundColor: 'rgba(77,83,96,0.2)',
-      borderColor: 'rgba(77,83,96,1)',
-      pointBackgroundColor: 'rgba(77,83,96,1)',
-      pointBorderColor: '#fff',
-      pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgba(77,83,96,1)'
-    },
-    { // grey
-      backgroundColor: 'rgba(148,159,177,0.2)',
-      borderColor: 'rgba(148,159,177,1)',
-      pointBackgroundColor: 'rgba(148,159,177,1)',
-      pointBorderColor: '#fff',
-      pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgba(148,159,177,0.8)'
+    // Charts
+    public guess = 0;
+    public admin = 0;
+    public barChartOptions;
+    public barChartLabels;
+    public barChartType;
+    public barChartLegend;
+    public barChartData;
+
+    // Pie
+    public student = [];
+    public course = [];
+    public pieChartLabels;
+    public pieChartData;
+    public pieChartType;
+
+    constructor(private api: ApiService) {
     }
-  ];
-  public lineChartLegend = true;
-  public lineChartType = 'line';
 
-  // barChart
-  public barChartOptions: any = {
-    scaleShowVerticalLines: false,
-    responsive: true
-  };
-  public barChartLabels: string[] = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
-  public barChartType = 'bar';
-  public barChartLegend = true;
+    ngOnInit() {
 
-  public barChartData: any[] = [
-    {data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A'},
-    {data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B'}
-  ];
+        this.api.getUsers()
+            .subscribe(response => {
+                response.forEach(user => {
+                    if (user.profile == 'guess')
+                        this.guess = this.guess + 1;
+                    if (user.profile == 'admin')
+                        this.admin = this.admin + 1;
+                });
+                this.chart();
+            }, err => {
+                console.log(err);
+            });
 
-  // Doughnut
-  public doughnutChartLabels: string[] = ['Download Sales', 'In-Store Sales', 'Mail-Order Sales'];
-  public doughnutChartData: number[] = [350, 450, 100];
-  public doughnutChartType = 'doughnut';
+      this.api.getCourses()
+          .subscribe(response => {
+            response.forEach(courseResponse => {
+              this.course.push(courseResponse.name)
 
-  // Radar
-  public radarChartLabels: string[] = ['Eating', 'Drinking', 'Sleeping', 'Designing', 'Coding', 'Cycling', 'Running'];
+              this.api.getStudents()
+                  .subscribe(res => {
+                    let quantity = 0;
+                    res.forEach(students => {
+                      if(courseResponse.id == students.course.id) quantity = quantity+1;
+                    });
+                    this.student.push(quantity);
+                  })
+            });
 
-  public radarChartData: any = [
-    {data: [65, 59, 90, 81, 56, 55, 40], label: 'Series A'},
-    {data: [28, 48, 40, 19, 96, 27, 100], label: 'Series B'}
-  ];
-  public radarChartType = 'radar';
+            this.pie();
+          }, err => {
+            console.log(err);
+          });
+    }
 
-  // Pie
-  public pieChartLabels: string[] = ['Download Sales', 'In-Store Sales', 'Mail Sales'];
-  public pieChartData: number[] = [300, 500, 100];
-  public pieChartType = 'pie';
+    chart() {
+        this.barChartOptions = {
+            scaleShowVerticalLines: false,
+            responsive: true
+        };
+        this.barChartLabels = ['Tipos de usuários'];
+        this.barChartType = 'bar';
+        this.barChartLegend = true;
+        this.barChartData = [
+            {data: [this.admin, 0], label: 'Administradores'},
+            {data: [this.guess, 0], label: 'Visitantes'}
+        ];
+    }
 
-  // PolarArea
-  public polarAreaChartLabels: string[] = ['Download Sales', 'In-Store Sales', 'Mail Sales', 'Telesales', 'Corporate Sales'];
-  public polarAreaChartData: number[] = [300, 500, 100, 40, 120];
-  public polarAreaLegend = true;
-
-  public polarAreaChartType = 'polarArea';
-
-  // events
-  public chartClicked(e: any): void {
-    console.log(e);
-  }
-
-  public chartHovered(e: any): void {
-    console.log(e);
-  }
-
+    pie() {
+        this.pieChartLabels = this.course;
+        this.pieChartData = this.student;
+        this.pieChartType = 'pie';
+    }
 }
