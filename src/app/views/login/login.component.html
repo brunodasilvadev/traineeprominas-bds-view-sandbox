@@ -23,7 +23,9 @@
                   </div>
                   <div class="row">
                     <div class="col-6">
-                      <button type="button" class="btn btn-primary px-4">Login</button>
+                      <button (click)="auth.login()" *ngIf="!auth.loggedIn" type="button" class="btn btn-primary px-4">Log In</button>
+                      <button (click)="auth.logout()" *ngIf="auth.loggedIn" type="button" class="btn btn-primary px-4">Log Out</button>
+                     <!-- <button type="button" class="btn btn-primary px-4">Login</button>-->
                     </div>
                     <div class="col-6 text-right">
                       <button type="button" class="btn btn-link px-0">Forgot password?</button>
