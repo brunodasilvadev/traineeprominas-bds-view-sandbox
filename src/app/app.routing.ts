@@ -3,6 +3,8 @@ import {Routes, RouterModule} from '@angular/router';
 import { CallbackComponent } from './callback/callback.component';
 import { AuthGuard } from './auth.guard';
 import { ProfileComponent } from './profile/profile.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { InterceptorService } from './interceptor.service';
 
 // Import Containers
 import {DefaultLayoutComponent} from './containers';
@@ -196,7 +198,14 @@ export const routes: Routes = [
 
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule]
+    exports: [RouterModule],
+    providers: [
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: InterceptorService,
+            multi: true
+        }
+    ]
 })
 export class AppRoutingModule {
 }
