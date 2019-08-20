@@ -1,5 +1,8 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
+import { CallbackComponent } from './callback/callback.component';
+import { AuthGuard } from './auth.guard';
+import { ProfileComponent } from './profile/profile.component';
 
 // Import Containers
 import {DefaultLayoutComponent} from './containers';
@@ -53,6 +56,15 @@ export const routes: Routes = [
         data: {
             title: 'Register Page'
         }
+    },
+    {
+        path: 'profile',
+        component: ProfileComponent,
+        canActivate: [AuthGuard]
+    },
+    {
+        path: 'callback',
+        component: CallbackComponent
     },
     {
         path: '',

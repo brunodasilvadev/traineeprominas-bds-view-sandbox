@@ -16,6 +16,8 @@
     "lib": [
       "esnext",
       "dom"
-    ]
+    ],
+    "resolveJsonModule": true,
+    "esModuleInterop": true
   }
 }

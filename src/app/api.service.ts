@@ -11,10 +11,10 @@ const httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'application/json'})
 };
 
-const apiUrl = 'https://traineeprominas-ncsp-sandbox.herokuapp.com/api/v1/user';
-const apiUrlTeacher = 'https://traineeprominas-ncsp-sandbox.herokuapp.com/api/v1/teacher';
-const apiUrlCourse = 'https://traineeprominas-ncsp-sandbox.herokuapp.com/api/v1/course';
-const apiUrlStudent = 'https://traineeprominas-ncsp-sandbox.herokuapp.com/api/v1/student';
+const apiUrl = 'https://traineeprominas-ncsp-sandbox.herokuapp.com/api/v1.1/user';
+const apiUrlTeacher = 'https://traineeprominas-ncsp-sandbox.herokuapp.com/api/v1.1/teacher';
+const apiUrlCourse = 'https://traineeprominas-ncsp-sandbox.herokuapp.com/api/v1.1/course';
+const apiUrlStudent = 'https://traineeprominas-ncsp-sandbox.herokuapp.com/api/v1.1/student';
 
 @Injectable({
     providedIn: 'root'

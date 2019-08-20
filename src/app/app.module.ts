@@ -72,6 +72,8 @@ import {
 } from '@angular/material';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {HttpClientModule} from '@angular/common/http';
+import { CallbackComponent } from './callback/callback.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
     imports: [
@@ -125,7 +127,9 @@ import {HttpClientModule} from '@angular/common/http';
         UsersComponent,
         UsersNewComponent,
         UsersUpdateComponent,
-        UsersDetailsComponent
+        UsersDetailsComponent,
+        CallbackComponent,
+        ProfileComponent
     ],
     bootstrap: [AppComponent]
 })
