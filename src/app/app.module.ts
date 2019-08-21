@@ -18,8 +18,6 @@ import {DefaultLayoutComponent} from './containers';
 
 import {P404Component} from './views/error/404.component';
 import {P500Component} from './views/error/500.component';
-import {LoginComponent} from './views/login/login.component';
-import {RegisterComponent} from './views/register/register.component';
 
 import {TeachersComponent} from './views/teachers/teachers/teachers.component';
 import {TeacherNewComponent} from './views/teachers/teachers-new/teachers-new.component';
@@ -110,8 +108,6 @@ import { ProfileComponent } from './profile/profile.component';
         ...APP_CONTAINERS,
         P404Component,
         P500Component,
-        LoginComponent,
-        RegisterComponent,
         TeachersComponent,
         TeacherNewComponent,
         TeacherUpdateComponent,
