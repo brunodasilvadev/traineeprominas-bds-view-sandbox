@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1d819f77-fc1f-4c78-a436-ab4335927e9d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.routing.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.routing.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/auth/auth.service.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,7 +51,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/auth0-angular-samples-master/01-Login" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../traineeprominas-bds-sandbox" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
@@ -105,7 +103,9 @@
       <workItem from="1566235464466" duration="844000" />
       <workItem from="1566244672577" duration="3194000" />
       <workItem from="1566299287341" duration="15723000" />
-      <workItem from="1566321500237" duration="3496000" />
+      <workItem from="1566321500237" duration="8895000" />
+      <workItem from="1566385053336" duration="899000" />
+      <workItem from="1566390008141" duration="1312000" />
     </task>
     <servers />
   </component>
