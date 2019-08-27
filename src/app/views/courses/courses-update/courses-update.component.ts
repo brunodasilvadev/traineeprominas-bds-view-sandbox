@@ -30,7 +30,7 @@ export class CoursesUpdateComponent implements OnInit {
             name: [null, [Validators.required, Validators.minLength(2)]],
             period: [null, Validators.required],
             city: [null, [Validators.required, Validators.minLength(2)]],
-            teacher: [null , Validators.required]
+            teacher: ['', Validators.required]
         });
     }
 
