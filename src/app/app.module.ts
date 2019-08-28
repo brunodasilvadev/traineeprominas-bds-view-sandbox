@@ -35,6 +35,7 @@ import {UsersComponent} from "./views/users/users/users.component";
 import {UsersNewComponent} from "./views/users/users-new/users-new.component";
 import {UsersUpdateComponent} from "./views/users/users-update/users-update.component";
 import {UsersDetailsComponent} from "./views/users/users-details/users-details.component";
+import {HomeComponent} from './home/home.component';
 
 const APP_CONTAINERS = [
     DefaultLayoutComponent
@@ -125,7 +126,8 @@ import { ProfileComponent } from './profile/profile.component';
         UsersUpdateComponent,
         UsersDetailsComponent,
         CallbackComponent,
-        ProfileComponent
+        ProfileComponent,
+        HomeComponent
     ],
     bootstrap: [AppComponent]
 })

@@ -1,0 +1,36 @@
+<app-header
+        [navbarBrandRouterLink]="['/']"
+        [fixed]="true"
+        [sidebarToggler]="'lg'"
+        [asideMenuToggler]="'lg'">
+</app-header>
+<div class="app-body">
+    <div class="app-body">
+        <main class="main d-flex align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 mx-auto">
+                        <div class="card-group">
+                            <div class="card p-4">
+                                <div class="card-body">
+                                        <h1>Faça o seu login</h1>
+                                        <div class="input-group mb-3">
+                                            <button (click)="auth.login()" *ngIf="!auth.loggedIn" type="button" class="btn btn-primary px-4">Log In</button>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="card text-white bg-primary py-5 d-md-down-none" style="width:44%">
+                                <div class="card-body text-center">
+                                    <div>
+                                        <h2>SANDBOX</h2>
+                                        <p>Sistema sandbox para o Programa Trainee do Grupo Prominas</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>

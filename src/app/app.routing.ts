@@ -27,8 +27,23 @@ import {UsersComponent} from "./views/users/users/users.component";
 import {UsersNewComponent} from "./views/users/users-new/users-new.component";
 import {UsersUpdateComponent} from "./views/users/users-update/users-update.component";
 import {UsersDetailsComponent} from "./views/users/users-details/users-details.component";
+import {HomeComponent} from './home/home.component';
 
 export const routes: Routes = [
+    {
+        path: '',
+        component: HomeComponent
+    },
+    {
+        path: 'login',
+        canActivate: [AuthGuard],
+        children: []
+    },
+    {
+        path: 'logout',
+        redirectTo: '',
+        pathMatch: 'full'
+    },
     {
         path: '404',
         component: P404Component,
@@ -61,119 +76,136 @@ export const routes: Routes = [
         children: [
             {
                 path: 'charts',
-                loadChildren: () => import('./views/chartjs/chartjs.module').then(m => m.ChartJSModule)
+                loadChildren: () => import('./views/chartjs/chartjs.module').then(m => m.ChartJSModule),
+                canActivate: [AuthGuard]
             },
             {
                 path: 'users',
                 component: UsersComponent,
                 data: {
                     title: 'Usuários'
-                }
+                },
+                canActivate: [AuthGuard]
             },
             {
                 path: 'users-new',
                 component: UsersNewComponent,
                 data: {
                     title: 'Novos Usuários'
-                }
+                },
+                canActivate: [AuthGuard]
             },
             {
                 path: 'users-update/:id',
                 component: UsersUpdateComponent,
                 data: {
                     title: 'Atualiza Usuários'
-                }
+                },
+                canActivate: [AuthGuard]
             },
             {
                 path: 'users-details/:id',
                 component: UsersDetailsComponent,
                 data: {
                     title: 'Detalhes do Usuários'
-                }
+                },
+                canActivate: [AuthGuard]
             },
             {
                 path: 'teachers',
                 component: TeachersComponent,
                 data: {
                     title: 'Professores'
-                }
+                },
+                canActivate: [AuthGuard]
             },
             {
                 path: 'teacher-new',
                 component: TeacherNewComponent,
                 data: {
                     title: 'Novo Professor'
-                }
+                },
+                canActivate: [AuthGuard]
             },
             {
                 path: 'teacher-update/:id',
                 component: TeacherUpdateComponent,
                 data: {
                     title: 'Atualiza Professor'
-                }
+                },
+                canActivate: [AuthGuard]
             },
             {
                 path: 'teacher-details/:id',
                 component: TeacherDetailsComponent,
                 data: {
                     title: 'Detalhes do Professor'
-                }
+                },
+                canActivate: [AuthGuard]
             },
             {
                 path: 'courses',
                 component: CoursesComponent,
                 data: {
                     title: 'Cursos'
-                }
+                },
+                canActivate: [AuthGuard]
             },
             {
                 path: 'course-new',
                 component: CoursesNewComponent,
                 data: {
                     title: 'Novo Curso'
-                }
+                },
+                canActivate: [AuthGuard]
             },
             {
                 path: 'course-update/:id',
                 component: CoursesUpdateComponent,
                 data: {
                     title: 'Atualiza Curso'
-                }
+                },
+                canActivate: [AuthGuard]
             },
             {
                 path: 'course-details/:id',
                 component: CoursesDetailsComponent,
                 data: {
                     title: 'Detalhes do Curso'
-                }
+                },
+                canActivate: [AuthGuard]
             },
             {
                 path: 'students',
                 component: StudentsComponent,
                 data: {
                     title: 'Estudantes'
-                }
+                },
+                canActivate: [AuthGuard]
             },
             {
                 path: 'students-new',
                 component: StudentNewComponent,
                 data: {
                     title: 'Novo Estudante'
-                }
+                },
+                canActivate: [AuthGuard]
             },
             {
                 path: 'students-update/:id',
                 component: StudentsUpdateComponent,
                 data: {
                     title: 'Atualiza Estudante'
-                }
+                },
+                canActivate: [AuthGuard]
             },
             {
                 path: 'students-details/:id',
                 component: StudentsDetailsComponent,
                 data: {
                     title: 'Detalhes do Estudante'
-                }
+                },
+                canActivate: [AuthGuard]
             }
         ]
     },
