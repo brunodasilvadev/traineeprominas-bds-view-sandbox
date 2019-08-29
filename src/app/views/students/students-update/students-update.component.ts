@@ -50,9 +50,19 @@ export class StudentsUpdateComponent implements OnInit {
         });
     }
 
-    updateStudent(form: NgForm) {
+    updateStudent(form) {
         this.isLoadingResults = true;
-        this.api.updateStudent(this.id, form)
+
+        const newStudent = {
+            name: form.name,
+            lastName: form.lastName,
+            age: form.age,
+            course: form.course.id
+
+        };
+
+
+        this.api.updateStudent(this.id, newStudent)
             .subscribe(res => {
                     this.isLoadingResults = false;
                     this.router.navigate(['/students-details/' + this.id]);
