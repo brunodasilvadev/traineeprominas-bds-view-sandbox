@@ -13,7 +13,7 @@ import {Users} from '../../../models/users';
 
 export class UsersComponent implements OnInit {
 
-    displayedColumns: string[] = ['name', 'lastName', 'profile', 'actionUpdate', 'action'];
+    displayedColumns: string[] = ['name', 'profile', 'actionUpdate', 'action'];
     dataSource: MatTableDataSource<Users>;
     isLoadingResults = true;
     length = 10;

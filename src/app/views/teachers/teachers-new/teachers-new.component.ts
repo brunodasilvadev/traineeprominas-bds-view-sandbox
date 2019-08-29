@@ -11,6 +11,7 @@ import { ApiService } from '../../../api.service';
 export class TeacherNewComponent implements OnInit {
 
     teacherForm: FormGroup;
+    phd = false;
     isLoadingResults = false;
     constructor(private router: Router, private api: ApiService, private formBuilder: FormBuilder) { }
 

@@ -12,7 +12,7 @@
     <mat-card class="example-card">
         <mat-card-header>
             <mat-card-title>Usuário: <h2>{{users.name}} {{users.lastName}}</h2></mat-card-title>
-            <mat-card-subtitle>Perfil: {{users.profile}}</mat-card-subtitle>
+            <mat-card-subtitle>Perfil: <label *ngIf="users.profile=='guess'">Visitante</label> <label *ngIf="users.profile=='admin'">Administrador</label></mat-card-subtitle>
         </mat-card-header>
         <mat-card-actions>
             <button class="btn btn-sm btn-warning" [routerLink]="['/users-update', users.id]"><i class="fa fa-edit"></i> Editar</button>
