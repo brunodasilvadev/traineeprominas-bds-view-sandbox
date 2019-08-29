@@ -15,33 +15,37 @@ export class StudentsUpdateComponent implements OnInit {
     name: string;
     lastName: string;
     age: number;
-    courses: Courses[];
+    courses: Courses[] = [];
     isLoadingResults = false;
-    constructor(private router: Router, private route: ActivatedRoute, private api: ApiService, private formBuilder: FormBuilder) {
+    constructor(private router: Router, private route: ActivatedRoute, private api: ApiService,
+                private formBuilder: FormBuilder, private activatedRoute: ActivatedRoute) {
+        this.courses = this.activatedRoute.snapshot.data.Courses;
+        //console.log(Courses);
     }
 
     ngOnInit() {
-        this.api.getCourses()
-            .subscribe(courses => this.courses = courses);
+       /* this.api.getCourses()
+            .subscribe(courses => this.courses = courses);*/
 
         this.getStudent(this.route.snapshot.params['id']);
         this.studentForm = this.formBuilder.group({
-            name : [null, [Validators.required, Validators.minLength(2)]],
-            lastName : [null, Validators.required],
-            age : [null, [Validators.required, Validators.minLength(2)]],
-            course: [null, [Validators.required]]
+            name : ['', [Validators.required, Validators.minLength(2)]],
+            lastName : ['', Validators.required],
+            age : ['', [Validators.required, Validators.minLength(2)]],
+            course: [[], [Validators.required]]
         });
     }
 
     getStudent(id) {
         this.api.getStudent(id).subscribe(data => {
-            console.log(data);
+            console.log(data, this.courses);
             this.id = data.id;
             this.studentForm.setValue({
                 name: data.name,
                 lastName: data.lastName,
                 age: data.age,
-                course: data.course
+                /*course: data.course*/
+                course: this.courses.find(c => c.id === data.course.id)
             });
         });
     }

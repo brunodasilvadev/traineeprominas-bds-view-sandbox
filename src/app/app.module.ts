@@ -74,6 +74,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {HttpClientModule} from '@angular/common/http';
 import { CallbackComponent } from './callback/callback.component';
 import { ProfileComponent } from './profile/profile.component';
+import {CourseResolver} from "./views/students/course.resolver";
 
 @NgModule({
     imports: [
@@ -131,7 +132,8 @@ import { ProfileComponent } from './profile/profile.component';
         ProfileComponent,
         HomeComponent
     ],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
+    providers: [CourseResolver]
 })
 export class AppModule {
 }

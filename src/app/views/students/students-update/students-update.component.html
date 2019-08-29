@@ -28,7 +28,7 @@
             <label class="col-md-1 col-form-label" for="select1">Cursos:</label>
             <div class="col-md-11">
                 <select id="select1" name="course" class="form-control" formControlName="course">
-                    <option *ngFor="let course of courses" value="{{course.id}}">{{ course.name }}</option>
+                    <option *ngFor="let course of courses" [ngValue]="course">{{ course.name }}</option>
                 </select>
             </div>
         </div>
@@ -38,3 +38,43 @@
         </div>
     </form>
 </div>
+<!--
+<div>
+<div>
+    <h3>Editar Estudante</h3>
+</div>
+<form class="example-container" [formGroup]="studentForm" (ngSubmit)="updateStudent(studentForm.value)">
+    <div>
+        <mat-label>Nome:</mat-label>
+        <mat-form-field>
+            <input matInput name="name" placeholder="Nome" formControlName="name">
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-label>Sobrenome:</mat-label>
+        <mat-form-field>
+            <input matInput name="lastName" placeholder="Sobrenome" formControlName="lastName">
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-label>Idade:</mat-label>
+        <mat-form-field>
+            <input matInput name="age" placeholder="Idade" formControlName="age">
+        </mat-form-field>
+    </div>
+    <div>
+        <div>
+            <mat-label>Cursos:</mat-label>
+            <mat-select  placeholder="Selecione" class="form-control" formControlName="course" id="course" multiple>
+                <mat-option *ngFor="let course of courses" value="{{course.id}}">{{ course.name }}</mat-option>
+            </mat-select>
+
+        </div>
+    </div>
+    <div>
+        <button type="submit" [disabled]="!studentForm.valid" mat-button color="primary">Adicionar</button>
+
+        <button mat-flat-button color="accent" routerLink="/students/" selected>Voltar</button>
+    </div>
+</form>
+-->

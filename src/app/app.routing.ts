@@ -28,6 +28,7 @@ import {UsersNewComponent} from "./views/users/users-new/users-new.component";
 import {UsersUpdateComponent} from "./views/users/users-update/users-update.component";
 import {UsersDetailsComponent} from "./views/users/users-details/users-details.component";
 import {HomeComponent} from './home/home.component';
+import {CourseResolver} from "./views/students/course.resolver";
 
 export const routes: Routes = [
     {
@@ -194,7 +195,8 @@ export const routes: Routes = [
                 data: {
                     title: 'Atualiza Estudante'
                 },
-                canActivate: [AuthGuard]
+                canActivate: [AuthGuard],
+                resolve: {Courses: CourseResolver}
             },
             {
                 path: 'students-details/:id',
