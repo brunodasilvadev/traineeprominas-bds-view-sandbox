@@ -16,7 +16,7 @@
             <mat-card-subtitle>Curso: {{students.course.name}}</mat-card-subtitle>
         </mat-card-header>
         <mat-card-actions>
-            <button class="btn btn-sm btn-warning" [routerLink]="['/student-update', students.id]"><i class="fa fa-edit"></i> Editar</button>
+            <button class="btn btn-sm btn-warning" [routerLink]="['/students-update', students.id]"><i class="fa fa-edit"></i> Editar</button>
             <button class="btn btn-sm btn-danger" (click)="deleteStudent(students.id)"><i class="fa fa-ban"></i> Excluir</button>
         </mat-card-actions>
     </mat-card>

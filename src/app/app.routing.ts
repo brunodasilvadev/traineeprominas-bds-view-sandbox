@@ -72,7 +72,7 @@ export const routes: Routes = [
         component: DefaultLayoutComponent,
         children: [
             {
-                path: 'Gráficos',
+                path: 'graficos',
                 loadChildren: () => import('./views/chartjs/chartjs.module').then(m => m.ChartJSModule),
                 canActivate: [AuthGuard]
             },

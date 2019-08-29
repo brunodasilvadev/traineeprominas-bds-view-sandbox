@@ -32,7 +32,7 @@ export interface NavData {
 export const navItems: NavData[] = [
   {
     name: 'Gráficos',
-    url: '/charts',
+    url: '/graficos',
     icon: 'icon-pie-chart'
   },
   {

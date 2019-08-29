@@ -25,7 +25,7 @@
             <label class="col-md-1 col-form-label" for="select1">Professores:</label>
             <div class="col-md-11">
                <select id="select1" name="teacher" class="form-control" formControlName="teacher" multiple>
-                    <option *ngFor="let teacher of teachers" [value]="teacher.id">{{ teacher.name }} {{ teacher.lastName }}</option>
+                    <option *ngFor="let teacher of teachers" value="{{teacher.id}}}">{{ teacher.name }} {{ teacher.lastName }}</option>
                 </select>
             </div>
         </div>
@@ -36,3 +36,4 @@
         </div>
     </form>
 </div>
+

@@ -13,7 +13,7 @@ export class UsersNewComponent implements OnInit {
 
     userForm: FormGroup;
     isLoadingResults = false;
-    constructor(private router: Router, private api: ApiService, private formBuilder: FormBuilder, private snackBar: MatSnackBar) { }
+    constructor(private snackBar: MatSnackBar, private router: Router, private api: ApiService, private formBuilder: FormBuilder) { }
 
     ngOnInit() {
         this.userForm = this.formBuilder.group({
@@ -26,6 +26,7 @@ export class UsersNewComponent implements OnInit {
     openSnackBar(message: string, action: string) {
         this.snackBar.open(message, action, {
             duration: 2000,
+            verticalPosition: 'top'
         });
     }
 
@@ -33,10 +34,10 @@ export class UsersNewComponent implements OnInit {
         this.isLoadingResults = true;
         this.api.addUser(form)
             .subscribe(res => {
-                this.openSnackBar('Usuário cadastrado com sucesso!', 'Ok');
                 const id = res['id'];
                 this.isLoadingResults = false;
                 this.router.navigate(['/users']);
+                /*this.openSnackBar('Usuário cadastrado com sucesso!', 'Ok');*/
             }, (err) => {
                 console.log(err);
                 this.isLoadingResults = false;
