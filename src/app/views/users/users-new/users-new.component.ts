@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { ApiService } from '../../../api.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
     selector: 'app-users-new',
@@ -12,7 +13,7 @@ export class UsersNewComponent implements OnInit {
 
     userForm: FormGroup;
     isLoadingResults = false;
-    constructor(private router: Router, private api: ApiService, private formBuilder: FormBuilder) { }
+    constructor(private router: Router, private api: ApiService, private formBuilder: FormBuilder, private snackBar: MatSnackBar) { }
 
     ngOnInit() {
         this.userForm = this.formBuilder.group({
@@ -22,10 +23,17 @@ export class UsersNewComponent implements OnInit {
         });
     }
 
+    openSnackBar(message: string, action: string) {
+        this.snackBar.open(message, action, {
+            duration: 2000,
+        });
+    }
+
     addUser(form: NgForm) {
         this.isLoadingResults = true;
         this.api.addUser(form)
             .subscribe(res => {
+                this.openSnackBar('Usuário cadastrado com sucesso!', 'Ok');
                 const id = res['id'];
                 this.isLoadingResults = false;
                 this.router.navigate(['/users']);

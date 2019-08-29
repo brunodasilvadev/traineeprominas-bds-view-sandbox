@@ -67,7 +67,8 @@ import {
     MatSidenavModule,
     MatTableModule,
     MatToolbarModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatSnackBarModule
 } from '@angular/material';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {HttpClientModule} from '@angular/common/http';
@@ -102,7 +103,8 @@ import { ProfileComponent } from './profile/profile.component';
         MatSidenavModule,
         MatTableModule,
         MatPaginatorModule,
-        MatToolbarModule
+        MatToolbarModule,
+        MatSnackBarModule
     ],
     declarations: [
         AppComponent,

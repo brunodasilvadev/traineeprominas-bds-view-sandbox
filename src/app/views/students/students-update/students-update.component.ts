@@ -51,7 +51,7 @@ export class StudentsUpdateComponent implements OnInit {
         this.api.updateStudent(this.id, form)
             .subscribe(res => {
                     this.isLoadingResults = false;
-                    this.router.navigate(['/student-details/' + this.id]);
+                    this.router.navigate(['/students-details/' + this.id]);
                 }, (err) => {
                     console.log(err);
                     this.isLoadingResults = false;

@@ -70,12 +70,9 @@ export const routes: Routes = [
     {
         path: '',
         component: DefaultLayoutComponent,
-        data: {
-            title: 'Home'
-        },
         children: [
             {
-                path: 'charts',
+                path: 'Gráficos',
                 loadChildren: () => import('./views/chartjs/chartjs.module').then(m => m.ChartJSModule),
                 canActivate: [AuthGuard]
             },

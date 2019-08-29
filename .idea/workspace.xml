@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d819f77-fc1f-4c78-a436-ab4335927e9d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/home/home.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/home/home.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/home/home.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/app.routing.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.routing.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/auth/auth.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/containers/default-layout/default-layout.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/containers/default-layout/default-layout.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/views/students/students-update/students-update.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/students/students-update/students-update.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/views/users/users-new/users-new.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/users/users-new/users-new.component.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,7 +62,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/coreui-free-angular-admin-template-master" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Eventos.IO - Navegacao" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
@@ -124,6 +119,7 @@
       <workItem from="1566390008141" duration="1312000" />
       <workItem from="1566905338790" duration="6380000" />
       <workItem from="1566929492580" duration="226000" />
+      <workItem from="1567077181009" duration="5519000" />
     </task>
     <servers />
   </component>
