@@ -4,12 +4,16 @@ import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Valida
 import { ApiService } from '../../../api.service';
 import { Courses } from '../../../models/courses';
 
+import { ToastrService } from 'ngx-toastr';
+
 @Component({
     selector: 'app-student-update',
     templateUrl: './students-update.component.html',
     styleUrls: ['./students-update.component.scss']
 })
 export class StudentsUpdateComponent implements OnInit {
+
+    public errors: any[] = [];
     id: number;
     studentForm: FormGroup;
     name: string;
@@ -17,8 +21,12 @@ export class StudentsUpdateComponent implements OnInit {
     age: number;
     courses: Courses[] = [];
     isLoadingResults = false;
-    constructor(private router: Router, private route: ActivatedRoute, private api: ApiService,
-                private formBuilder: FormBuilder, private activatedRoute: ActivatedRoute) {
+    constructor(private router: Router,
+                private route: ActivatedRoute,
+                private api: ApiService,
+                private formBuilder: FormBuilder,
+                private activatedRoute: ActivatedRoute,
+                private toastr: ToastrService) {
         this.courses = this.activatedRoute.snapshot.data.Courses;
         //console.log(Courses);
     }
@@ -64,12 +72,28 @@ export class StudentsUpdateComponent implements OnInit {
 
         this.api.updateStudent(this.id, newStudent)
             .subscribe(res => {
-                    this.isLoadingResults = false;
-                    this.router.navigate(['/students-details/' + this.id]);
+
+                //alerta
+                const toastMessage = this.toastr.success('Estudante atualizado com sucesso!', 'Oba :D');
+
+                if(toastMessage){
+                    toastMessage.onHidden.subscribe(() => {
+                        this.isLoadingResults = false;
+                        this.router.navigate(['/students-details/' + this.id]);
+                    } )
+                }
+                //finalAlerta
+
                 }, (err) => {
                     console.log(err);
+                    this.onError(err);
                     this.isLoadingResults = false;
                 }
             );
+    }
+
+    onError(fail) {
+        this.toastr.error('Ocorreu um erro no processamento', 'Ops! :(');
+        this.errors = fail.error.errors;
     }
 }

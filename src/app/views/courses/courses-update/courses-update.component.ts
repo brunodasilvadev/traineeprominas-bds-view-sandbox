@@ -4,12 +4,16 @@ import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Valida
 import { ApiService } from '../../../api.service';
 import { Teachers } from '../../../models/teachers';
 
+import { ToastrService } from 'ngx-toastr';
+
 @Component({
     selector: 'app-course-update',
     templateUrl: './courses-update.component.html',
     styleUrls: ['./courses-update.component.scss']
 })
 export class CoursesUpdateComponent implements OnInit {
+
+    public errors: any[] = [];
     id: number;
     courseForm: FormGroup;
     name: string;
@@ -22,7 +26,8 @@ export class CoursesUpdateComponent implements OnInit {
                 private route: ActivatedRoute, 
                 private api: ApiService, 
                 private formBuilder: FormBuilder,
-                private activatedRoute: ActivatedRoute) {
+                private activatedRoute: ActivatedRoute,
+                private toastr: ToastrService) {
         this.teachers = this.activatedRoute.snapshot.data.Teachers;
     }
 
@@ -70,13 +75,29 @@ export class CoursesUpdateComponent implements OnInit {
 
         this.api.updateCourse(this.id, form)
             .subscribe(res => {
-                    this.isLoadingResults = false;
-                    this.router.navigate(['/course-details/' + this.id]);
+
+                //alerta
+                const toastMessage = this.toastr.success('Curso alterado com sucesso!', 'Oba :D');
+
+                if(toastMessage){
+                    toastMessage.onHidden.subscribe(() => {
+                        this.isLoadingResults = false;
+                        this.router.navigate(['/course-details/' + this.id]);
+                    } )
+                }
+                //finalAlerta
+
                 }, (err) => {
                     console.log(err);
+                    this.onError(err);
                     this.isLoadingResults = false;
                 }
             );
+    }
+
+    onError(fail) {
+        this.toastr.error('Ocorreu um erro no processamento', 'Ops! :(');
+        this.errors = fail.error.errors;
     }
 
 }

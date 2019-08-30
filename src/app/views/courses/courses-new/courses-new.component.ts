@@ -4,6 +4,8 @@ import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { ApiService } from '../../../api.service';
 import { Teachers } from '../../../models/teachers';
 
+import { ToastrService } from 'ngx-toastr';
+
 @Component({
     selector: 'app-course-new',
     templateUrl: './courses-new.component.html',
@@ -11,10 +13,14 @@ import { Teachers } from '../../../models/teachers';
 })
 export class CoursesNewComponent implements OnInit {
 
+    public errors: any[] = [];
     courseForm: FormGroup;
     isLoadingResults = false;
     teachers: Teachers[];
-    constructor(private router: Router, private api: ApiService, private formBuilder: FormBuilder) { }
+    constructor(private router: Router,
+                private api: ApiService,
+                private formBuilder: FormBuilder,
+                private toastr: ToastrService) { }
 
     ngOnInit() {
         this.courseForm = this.formBuilder.group({
@@ -35,11 +41,25 @@ export class CoursesNewComponent implements OnInit {
         this.api.addCourse(form)
             .subscribe(res => {
                 const id = res['id'];
-                this.isLoadingResults = false;
-                this.router.navigate(['/courses']);
+                //alerta
+                const toastMessage = this.toastr.success('Curso registrado com sucesso!', 'Oba :D');
+
+                if(toastMessage){
+                    toastMessage.onHidden.subscribe(() => {
+                        this.isLoadingResults = false;
+                        this.router.navigate(['/courses']);
+                    } )
+                }
+                //finalAlerta
             }, (err) => {
                 console.log(err);
+                this.onError(err);
                 this.isLoadingResults = false;
             });
+    }
+
+    onError(fail) {
+        this.toastr.error('Ocorreu um erro no processamento', 'Ops! :(');
+        this.errors = fail.error.errors;
     }
 }

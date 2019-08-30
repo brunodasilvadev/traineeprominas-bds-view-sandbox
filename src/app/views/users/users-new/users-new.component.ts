@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { ApiService } from '../../../api.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
+
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
     selector: 'app-users-new',
@@ -11,9 +12,14 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class UsersNewComponent implements OnInit {
 
+    public errors: any[] = [];
     userForm: FormGroup;
     isLoadingResults = false;
-    constructor(private snackBar: MatSnackBar, private router: Router, private api: ApiService, private formBuilder: FormBuilder) { }
+    constructor(private router: Router,
+                private api: ApiService,
+                private formBuilder: FormBuilder,
+                private toastr: ToastrService)
+                {}
 
     ngOnInit() {
         this.userForm = this.formBuilder.group({
@@ -23,24 +29,31 @@ export class UsersNewComponent implements OnInit {
         });
     }
 
-    openSnackBar(message: string, action: string) {
-        this.snackBar.open(message, action, {
-            duration: 2000,
-            verticalPosition: 'top'
-        });
-    }
-
     addUser(form: NgForm) {
         this.isLoadingResults = true;
         this.api.addUser(form)
             .subscribe(res => {
                 const id = res['id'];
-                this.isLoadingResults = false;
-                this.router.navigate(['/users']);
-                /*this.openSnackBar('Usuário cadastrado com sucesso!', 'Ok');*/
+
+                //alerta
+                const toastMessage = this.toastr.success('Usuário Registrado com Sucesso!', 'Oba :D');
+
+                if(toastMessage){
+                    toastMessage.onHidden.subscribe(() => {
+                        this.isLoadingResults = false;
+                        this.router.navigate(['/users']);
+                    } )
+                }
+                //finalAlerta
             }, (err) => {
                 console.log(err);
+                this.onError(err);
                 this.isLoadingResults = false;
             });
+    }
+
+    onError(fail) {
+        this.toastr.error('Ocorreu um erro no processamento', 'Ops! :(');
+        this.errors = fail.error.errors;
     }
 }

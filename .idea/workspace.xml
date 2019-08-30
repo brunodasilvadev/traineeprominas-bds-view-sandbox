@@ -3,15 +3,50 @@
   <component name="ChangeListManager">
     <list default="true" id="1d819f77-fc1f-4c78-a436-ab4335927e9d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/views/courses/courses-new/courses-new.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/courses/courses-new/courses-new.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/animations.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/animations.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/browser.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/browser.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/testing.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/testing.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/testing/testing.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/testing/testing.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser-testing.umd.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser-testing.umd.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser-testing.umd.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser-testing.umd.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser-testing.umd.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser-testing.umd.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser-testing.umd.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser-testing.umd.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser.umd.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser.umd.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser.umd.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser.umd.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser.umd.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser.umd.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser.umd.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser.umd.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations.umd.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations.umd.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations.umd.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations.umd.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations.umd.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations.umd.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/esm2015/animations.externs.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/esm2015/animations.externs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/esm2015/browser/browser.externs.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/esm2015/browser/browser.externs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/esm2015/src/version.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/esm2015/src/version.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/esm5/src/version.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/esm5/src/version.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/fesm2015/animations.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/fesm2015/animations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/fesm2015/animations.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/fesm2015/animations.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/fesm2015/browser.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/fesm2015/browser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/fesm2015/browser.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/fesm2015/browser.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/fesm2015/browser/testing.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/fesm2015/browser/testing.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/fesm2015/browser/testing.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/fesm2015/browser/testing.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/fesm5/animations.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/fesm5/animations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/fesm5/browser.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/fesm5/browser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/fesm5/browser.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/fesm5/browser.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/fesm5/browser/testing.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/fesm5/browser/testing.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/views/courses/courses-new/courses-new.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/courses/courses-new/courses-new.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/views/courses/courses-update/courses-update.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/courses/courses-update/courses-update.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/views/courses/courses-update/courses-update.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/courses/courses-update/courses-update.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/views/students/students-new/students-new.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/students/students-new/students-new.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/views/students/students-update/students-update.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/students/students-update/students-update.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/views/students/students-new/students-new.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/students/students-new/students-new.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/views/students/students-update/students-update.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/students/students-update/students-update.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/views/teachers/teachers-new/teachers-new.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/teachers/teachers-new/teachers-new.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/views/teachers/teachers-update/teachers-update.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/teachers/teachers-update/teachers-update.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/views/users/users/users.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/users/users/users.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/views/users/users-new/users-new.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/users/users-new/users-new.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/views/users/users-new/users-new.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/users/users-new/users-new.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/views/users/users-update/users-update.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/users/users-update/users-update.component.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,7 +102,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/angular-select-option-selected" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Eventos.IO - Navegacao" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />

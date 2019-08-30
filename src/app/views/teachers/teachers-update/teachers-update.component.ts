@@ -3,12 +3,16 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { ApiService } from '../../../api.service';
 
+import { ToastrService } from 'ngx-toastr';
+
 @Component({
     selector: 'app-teacher-update',
     templateUrl: './teachers-update.component.html',
     styleUrls: ['./teachers-update.component.scss']
 })
 export class TeacherUpdateComponent implements OnInit {
+
+    public errors: any[] = [];
     id: number;
     teacherForm: FormGroup;
     name: string;
@@ -16,7 +20,11 @@ export class TeacherUpdateComponent implements OnInit {
     phd: boolean;
     isLoadingResults = false;
 
-    constructor(private router: Router, private route: ActivatedRoute, private api: ApiService, private formBuilder: FormBuilder) {
+    constructor(private router: Router,
+                private route: ActivatedRoute,
+                private api: ApiService,
+                private formBuilder: FormBuilder,
+                private toastr: ToastrService) {
     }
 
     ngOnInit() {
@@ -43,12 +51,27 @@ export class TeacherUpdateComponent implements OnInit {
         this.isLoadingResults = true;
         this.api.updateTeacher(this.id, form)
             .subscribe(res => {
-                    this.isLoadingResults = false;
-                    this.router.navigate(['/teacher-details/' + this.id]);
+                    //alerta
+                    const toastMessage = this.toastr.success('Professor atualizado com sucesso!', 'Oba :D');
+
+                    if(toastMessage){
+                        toastMessage.onHidden.subscribe(() => {
+                            this.isLoadingResults = false;
+                            this.router.navigate(['/teacher-details/' + this.id]);
+                        } )
+                    }
+                    //finalAlerta
+
                 }, (err) => {
                     console.log(err);
+                    this.onError(err);
                     this.isLoadingResults = false;
                 }
             );
+    }
+
+    onError(fail) {
+        this.toastr.error('Ocorreu um erro no processamento', 'Ops! :(');
+        this.errors = fail.error.errors;
     }
 }
