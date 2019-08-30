@@ -3,7 +3,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { ApiService } from '../../../api.service';
 import { Teachers } from '../../../models/teachers';
-import { ConsoleReporter } from 'jasmine';
 
 @Component({
     selector: 'app-course-update',
