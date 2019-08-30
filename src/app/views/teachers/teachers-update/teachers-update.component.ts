@@ -24,7 +24,7 @@ export class TeacherUpdateComponent implements OnInit {
         this.teacherForm = this.formBuilder.group({
             name : [null, [Validators.required, Validators.minLength(2)]],
             lastName : [null, [Validators.required, Validators.minLength(2)]],
-            phd : [null, Validators.required]
+            phd : [null, Validators.requiredTrue]
         });
     }
 
