@@ -75,6 +75,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { CallbackComponent } from './callback/callback.component';
 import { ProfileComponent } from './profile/profile.component';
 import {CourseResolver} from "./views/students/course.resolver";
+import {TeachersResolver} from "./views/courses/teachers-resolver"
 
 @NgModule({
     imports: [
@@ -133,7 +134,7 @@ import {CourseResolver} from "./views/students/course.resolver";
         HomeComponent
     ],
     bootstrap: [AppComponent],
-    providers: [CourseResolver]
+    providers: [CourseResolver, TeachersResolver]
 })
 export class AppModule {
 }

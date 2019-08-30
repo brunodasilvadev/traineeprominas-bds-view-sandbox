@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { ApiService } from '../../../api.service';
 import { Teachers } from '../../../models/teachers';
+import { ConsoleReporter } from 'jasmine';
 
 @Component({
     selector: 'app-course-update',
@@ -15,22 +16,27 @@ export class CoursesUpdateComponent implements OnInit {
     name: string;
     city: string;
     period: number;
-    teachers: Teachers[];
+    teachers: Teachers[] = [];
     isLoadingResults = false;
 
-    constructor(private router: Router, private route: ActivatedRoute, private api: ApiService, private formBuilder: FormBuilder) {
+    constructor(private router: Router, 
+                private route: ActivatedRoute, 
+                private api: ApiService, 
+                private formBuilder: FormBuilder,
+                private activatedRoute: ActivatedRoute) {
+        this.teachers = this.activatedRoute.snapshot.data.Teachers;
     }
 
     ngOnInit() {
-        this.api.getTeachers()
-            .subscribe(teachers => this.teachers = teachers);
+        // this.api.getTeachers()
+        //     .subscribe(teachers => this.teachers = teachers);
 
         this.getCourse(this.route.snapshot.params['id']);
         this.courseForm = this.formBuilder.group({
             name: [null, [Validators.required, Validators.minLength(2)]],
             period: [null, Validators.required],
             city: [null, [Validators.required, Validators.minLength(2)]],
-            teacher: ['', Validators.required]
+            teacher: [[], Validators.required]
 
         });
     }
@@ -43,13 +49,26 @@ export class CoursesUpdateComponent implements OnInit {
                 name: data.name,
                 period: data.period,
                 city: data.city,
-                teacher: data.teacher
+                teacher: this.teachers
             });
+            console.log('1')
+            var index = [];
+            data.teacher.forEach(function(item)
+            {
+                console.log(item.id);
+                var index2 = {};
+                index2 = item.id.toString();
+                index.push(index2);
+            });
+            console.log('2',index)
+
+            this.courseForm.get('teacher').setValue(index);
         });
     }
 
-    updateCourse(form: NgForm) {
+    updateCourse(form) {
         this.isLoadingResults = true;
+
         this.api.updateCourse(this.id, form)
             .subscribe(res => {
                     this.isLoadingResults = false;
@@ -60,4 +79,5 @@ export class CoursesUpdateComponent implements OnInit {
                 }
             );
     }
+
 }

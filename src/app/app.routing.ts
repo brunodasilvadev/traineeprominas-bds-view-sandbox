@@ -29,6 +29,7 @@ import {UsersUpdateComponent} from "./views/users/users-update/users-update.comp
 import {UsersDetailsComponent} from "./views/users/users-details/users-details.component";
 import {HomeComponent} from './home/home.component';
 import {CourseResolver} from "./views/students/course.resolver";
+import {TeachersResolver} from "./views/courses/teachers-resolver";
 
 export const routes: Routes = [
     {
@@ -163,7 +164,8 @@ export const routes: Routes = [
                 data: {
                     title: 'Atualiza Curso'
                 },
-                canActivate: [AuthGuard]
+                canActivate: [AuthGuard],
+                resolve: {Teachers: TeachersResolver}
             },
             {
                 path: 'course-details/:id',
