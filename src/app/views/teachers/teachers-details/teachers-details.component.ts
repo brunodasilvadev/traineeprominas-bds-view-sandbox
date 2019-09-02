@@ -28,15 +28,18 @@ export class TeacherDetailsComponent implements OnInit {
     }
 
     deleteTeacher(id) {
-        this.isLoadingResults = true;
-        this.api.deleteTeacher(id)
-            .subscribe(res => {
-                    this.isLoadingResults = false;
-                    this.router.navigate(['/teachers']);
-                }, (err) => {
-                    console.log(err);
-                    this.isLoadingResults = false;
-                }
-            );
+        var option = confirm('Você tem certeza que deseja excluir este registro?');
+        if(option){
+            this.isLoadingResults = true;
+            this.api.deleteTeacher(id)
+                .subscribe(res => {
+                        this.isLoadingResults = false;
+                        this.router.navigate(['/teachers']);
+                    }, (err) => {
+                        console.log(err);
+                        this.isLoadingResults = false;
+                    }
+                );
+        }
     }
 }

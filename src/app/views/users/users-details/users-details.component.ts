@@ -29,15 +29,18 @@ export class UsersDetailsComponent implements OnInit {
     }
 
     deleteUser(id) {
-        this.isLoadingResults = true;
-        this.api.deleteUser(id)
-            .subscribe(res => {
-                    this.isLoadingResults = false;
-                    this.router.navigate(['/users']);
-                }, (err) => {
-                    console.log(err);
-                    this.isLoadingResults = false;
-                }
-            );
+        var option = confirm('Você tem certeza que deseja excluir este registro?');
+        if(option){
+            this.isLoadingResults = true;
+            this.api.deleteUser(id)
+                .subscribe(res => {
+                        this.isLoadingResults = false;
+                        this.router.navigate(['/users']);
+                    }, (err) => {
+                        console.log(err);
+                        this.isLoadingResults = false;
+                    }
+                );
+        }
     }
 }

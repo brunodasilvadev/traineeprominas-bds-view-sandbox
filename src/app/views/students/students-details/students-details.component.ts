@@ -28,16 +28,19 @@ export class StudentsDetailsComponent implements OnInit {
     }
 
     deleteStudent(id) {
-        this.isLoadingResults = true;
-        this.api.deleteStudent(id)
-            .subscribe(res => {
-                    this.isLoadingResults = false;
-                    this.router.navigate(['/students']);
-                }, (err) => {
-                    console.log(err);
-                    this.isLoadingResults = false;
-                }
-            );
+        var option = confirm('Você tem certeza que deseja excluir este registro?');
+        if(option){
+            this.isLoadingResults = true;
+            this.api.deleteStudent(id)
+                .subscribe(res => {
+                        this.isLoadingResults = false;
+                        this.router.navigate(['/students']);
+                    }, (err) => {
+                        console.log(err);
+                        this.isLoadingResults = false;
+                    }
+                );
+        }
     }
 
 }
