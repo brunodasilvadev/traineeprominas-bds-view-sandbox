@@ -2,7 +2,10 @@
   [navbarBrandRouterLink]="['/']"
   [fixed]="true"
   [sidebarToggler]="'lg'"
-  [asideMenuToggler]="'lg'">
+  [asideMenuToggler]="false"
+  [mobileAsideMenuToggler]="false"
+  [navbarBrandFull]="{src: 'assets/img/brand/prominas.svg', width: 120, height: 50, alt: 'Prominas Logo'}"
+  [navbarBrandMinimized]="{src: 'assets/img/brand/small.svg', width: 30, height: 30, alt: 'Prominas Logo'}">
   <ul class="nav navbar-nav ml-auto">
     <li class="nav-item dropdown" dropdown placement="bottom right">
       <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" dropdownToggle (click)="false">

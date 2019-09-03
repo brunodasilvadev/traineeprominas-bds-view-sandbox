@@ -1,8 +1,12 @@
 <app-header
         [navbarBrandRouterLink]="['/']"
         [fixed]="true"
-        [sidebarToggler]="'lg'"
-        [asideMenuToggler]="'lg'">
+        [sidebarToggler]="false"
+        [asideMenuToggler]="false"
+        [mobileAsideMenuToggler]="false"
+        [mobileSidebarToggler]="false"
+        [navbarBrandFull]="{src: 'assets/img/brand/prominas.svg', width: 120, height: 50, alt: 'Prominas Logo'}"
+        [navbarBrandMinimized]="{src: 'assets/img/brand/small.svg', width: 30, height: 30, alt: 'Prominas Logo'}">
 </app-header>
 <div class="app-body">
     <div class="app-body">
