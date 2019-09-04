@@ -11,10 +11,15 @@ const httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'application/json'})
 };
 
-const apiUrl = 'https://traineeprominas-bds-sandbox.herokuapp.com/api/v1.1/user';
+/*const apiUrl = 'https://traineeprominas-bds-sandbox.herokuapp.com/api/v1.1/user';
 const apiUrlTeacher = 'https://traineeprominas-bds-sandbox.herokuapp.com/api/v1.1/teacher';
 const apiUrlCourse = 'https://traineeprominas-bds-sandbox.herokuapp.com/api/v1.1/course';
-const apiUrlStudent = 'https://traineeprominas-bds-sandbox.herokuapp.com/api/v1.1/student';
+const apiUrlStudent = 'https://traineeprominas-bds-sandbox.herokuapp.com/api/v1.1/student';*/
+
+const apiUrl = 'http://localhost:3000/api/v1.1/user';
+const apiUrlTeacher = 'http://localhost:3000/api/v1.1/teacher';
+const apiUrlCourse = 'http://localhost:3000/api/v1.1/course';
+const apiUrlStudent = 'http://localhost:3000/api/v1.1/student';
 
 @Injectable({
     providedIn: 'root'
@@ -26,14 +31,14 @@ export class ApiService {
 
     /*Users*/
     getUsers(): Observable<Users[]> {
-        return this.http.get<Users[]>(apiUrl)
+        return this.http.get<Users[]>(`${apiUrl}/JSON`)
             .pipe(
                 tap(userReturn => console.log('leu os usuários')),
                 catchError(this.handleError('getUsers', []))
             );
     }
     getUser(id: number): Observable<Users> {
-        const url = `${apiUrl}/${id}`;
+        const url = `${apiUrl}/JSON/${id}`;
         return this.http.get<Users>(url).pipe(
             tap(_ => console.log(`leu o usuário id=${id}`)),
             catchError(this.handleError<Users>(`getUser id=${id}`))
@@ -62,14 +67,14 @@ export class ApiService {
     }
     /*Teachers*/
     getTeachers(): Observable<Teachers[]> {
-        return this.http.get<Teachers[]>(apiUrlTeacher)
+        return this.http.get<Teachers[]>(`${apiUrlTeacher}/JSON`)
             .pipe(
                 tap(userReturn => console.log('leu os professores')),
                 catchError(this.handleError('getTeachers', []))
             );
     }
     getTeacher(id: number): Observable<Teachers> {
-        const url = `${apiUrlTeacher}/${id}`;
+        const url = `${apiUrlTeacher}/JSON/${id}`;
         return this.http.get<Teachers>(url).pipe(
             tap(_ => console.log(`leu o professor id=${id}`)),
             catchError(this.handleError<Teachers>(`getTeacher id=${id}`))
@@ -98,14 +103,14 @@ export class ApiService {
     }
     /*Courses*/
     getCourses(): Observable<Courses[]> {
-        return this.http.get<Courses[]>(apiUrlCourse)
+        return this.http.get<Courses[]>(`${apiUrlCourse}/JSON`)
             .pipe(
                 tap(userReturn => console.log('leu os cursos')),
                 catchError(this.handleError('getCourses', []))
             );
     }
     getCourse(id: number): Observable<Courses> {
-        const url = `${apiUrlCourse}/${id}`;
+        const url = `${apiUrlCourse}/JSON/${id}`;
         return this.http.get<Courses>(url).pipe(
             tap(_ => console.log(`leu o curso id=${id}`)),
             catchError(this.handleError<Courses>(`getTeacher id=${id}`))
@@ -134,14 +139,14 @@ export class ApiService {
     }
     /*Students*/
     getStudents(): Observable<Students[]> {
-        return this.http.get<Students[]>(apiUrlStudent)
+        return this.http.get<Students[]>(`${apiUrlStudent}/JSON`)
             .pipe(
                 tap(userReturn => console.log('leu os cursos')),
                 catchError(this.handleError('getStudents', []))
             );
     }
     getStudent(id: number): Observable<Students> {
-        const url = `${apiUrlStudent}/${id}`;
+        const url = `${apiUrlStudent}/JSON/${id}`;
         return this.http.get<Students>(url).pipe(
             tap(_ => console.log(`leu o estudante id=${id}`)),
             catchError(this.handleError<Students>(`getStudent id=${id}`))
