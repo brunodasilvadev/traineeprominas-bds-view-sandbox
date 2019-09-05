@@ -27,7 +27,7 @@ export class CoursesNewComponent implements OnInit {
             name : [null, [Validators.required, Validators.minLength(2)]],
             city : [null, [Validators.required, Validators.minLength(2)]],
             period: [null],
-            teacher: [[], [Validators.required, Validators.minLength(2)]]
+            teacher: [null, [Validators.required, Validators.minLength(2)]]
         });
 
         this.api.getTeachers()
@@ -36,8 +36,6 @@ export class CoursesNewComponent implements OnInit {
 
     addCourse(form) {
         this.isLoadingResults = true;
-        //console.log(form);
-
         this.api.addCourse(form)
             .subscribe(res => {
                 //const id = res['id'];

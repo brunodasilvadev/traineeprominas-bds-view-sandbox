@@ -35,11 +35,11 @@ export class StudentNewComponent implements OnInit {
             .subscribe(courses => this.courses = courses);
     }
 
-    addStudent(form: NgForm) {
+    addStudent(form) {
         this.isLoadingResults = true;
         this.api.addStudent(form)
             .subscribe(res => {
-                const id = res['id'];
+                //const id = res['id'];
                 //alerta
                 const toastMessage = this.toastr.success('Estudante registrado com sucesso!', 'Oba :D');
 
