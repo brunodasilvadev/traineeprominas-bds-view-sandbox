@@ -27,7 +27,7 @@ export class StudentNewComponent implements OnInit {
         this.studentForm = this.formBuilder.group({
             name : [null, [Validators.required, Validators.minLength(2)]],
             lastName : [null, Validators.required],
-            age : [null, [Validators.required, Validators.minLength(2)]],
+            age : [null, [Validators.required, Validators.minLength(2), Validators.min(17)]],
             course: [null, [Validators.required]]
         });
 
@@ -42,6 +42,7 @@ export class StudentNewComponent implements OnInit {
                 //const id = res['id'];
                 //alerta
                 const toastMessage = this.toastr.success('Estudante registrado com sucesso!', 'Oba :D');
+                //const toastMessage = this.toastr.success(res.toString());
 
                 if(toastMessage){
                     toastMessage.onHidden.subscribe(() => {
