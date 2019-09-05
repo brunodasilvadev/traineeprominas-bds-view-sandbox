@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ApiService } from '../../../api.service';
 import { Courses } from '../../../models/courses';
+import {ToastrService} from "ngx-toastr";
 
 @Component({
     selector: 'app-course-details',
@@ -12,7 +13,10 @@ export class CoursesDetailsComponent implements OnInit {
 
     courses: Courses = { id: null, name: '', period: null, city: '', teacher: null };
     isLoadingResults = true;
-    constructor(private router: Router, private route: ActivatedRoute, private api: ApiService) { }
+    constructor(private router: Router,
+                private route: ActivatedRoute,
+                private api: ApiService,
+                private toastr: ToastrService) { }
 
     ngOnInit() {
         this.getCourse(this.route.snapshot.params['id']);
@@ -33,6 +37,7 @@ export class CoursesDetailsComponent implements OnInit {
             this.isLoadingResults = true;
             this.api.deleteCourse(id)
                 .subscribe(res => {
+                        const toastMessage = this.toastr.success(res.toString());
                         this.isLoadingResults = false;
                         this.router.navigate(['/courses']);
                     }, (err) => {
