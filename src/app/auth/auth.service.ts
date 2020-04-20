@@ -16,7 +16,7 @@ export class AuthService {
         domain: config.domain,
         client_id: config.clientId,
         redirect_uri: `${window.location.origin}/callback`,
-        audience: "Trainee"
+        audience: "https://traineeprominas-bds-sandbox.herokuapp.com"
       })
   ) as Observable<Auth0Client>).pipe(
       shareReplay(1), // Every subscription receives the same shared value

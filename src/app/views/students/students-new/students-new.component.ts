@@ -27,7 +27,7 @@ export class StudentNewComponent implements OnInit {
         this.studentForm = this.formBuilder.group({
             name : [null, [Validators.required, Validators.minLength(2)]],
             lastName : [null, Validators.required],
-            age : [null, [Validators.required, Validators.minLength(2)]],
+            age : [null, [Validators.required, Validators.minLength(2), Validators.min(17)]],
             course: [null, [Validators.required]]
         });
 
@@ -35,13 +35,14 @@ export class StudentNewComponent implements OnInit {
             .subscribe(courses => this.courses = courses);
     }
 
-    addStudent(form: NgForm) {
+    addStudent(form) {
         this.isLoadingResults = true;
         this.api.addStudent(form)
             .subscribe(res => {
-                const id = res['id'];
+                //const id = res['id'];
                 //alerta
                 const toastMessage = this.toastr.success('Estudante registrado com sucesso!', 'Oba :D');
+                //const toastMessage = this.toastr.success(res.toString());
 
                 if(toastMessage){
                     toastMessage.onHidden.subscribe(() => {

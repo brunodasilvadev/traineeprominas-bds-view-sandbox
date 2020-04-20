@@ -25,22 +25,20 @@ export class CoursesNewComponent implements OnInit {
     ngOnInit() {
         this.courseForm = this.formBuilder.group({
             name : [null, [Validators.required, Validators.minLength(2)]],
-            period : [null, Validators.required],
             city : [null, [Validators.required, Validators.minLength(2)]],
-            teacher: [[], [Validators.required, Validators.minLength(2)]]
+            period: [null],
+            teacher: [null, [Validators.required, Validators.minLength(2)]]
         });
 
         this.api.getTeachers()
             .subscribe(teachers => this.teachers = teachers);
     }
 
-    addCourse(form: NgForm) {
+    addCourse(form) {
         this.isLoadingResults = true;
-        console.log(form);
-
         this.api.addCourse(form)
             .subscribe(res => {
-                const id = res['id'];
+                //const id = res['id'];
                 //alerta
                 const toastMessage = this.toastr.success('Curso registrado com sucesso!', 'Oba :D');
 
@@ -48,7 +46,7 @@ export class CoursesNewComponent implements OnInit {
                     toastMessage.onHidden.subscribe(() => {
                         this.isLoadingResults = false;
                         this.router.navigate(['/courses']);
-                    } )
+                    })
                 }
                 //finalAlerta
             }, (err) => {
